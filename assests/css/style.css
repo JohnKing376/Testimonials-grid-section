@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500&display=swap');
+:root {
+    --clr-primary-100: hsl(263, 55%, 52%);
+    --clr-primary-blue-100: hsl(217, 19%, 35%);
+    --clr-primary-blue-400: hsl(219, 29%, 14%);
+    
+
+    --clr-neutral-100:hsl(0, 0%, 100%);
+    --clr-neutral-400:hsl(0, 0%, 81%);
+    --clr-neutral-blue-600: hsl(210, 46%, 95%);
+
+    --fs-100:0.8125rem;
+    --fs-200:1rem;
+    --fs-300:1.25rem;
+    --fs-400:1.5rem;
+    --fs-500:1.75rem;
+    --fs-600:2rem;
+
+    --font-family-default: 'Barlow Semi Condensed', sans-serif;
+
+    --spacing-100:0.75rem;
+    --spacing-200:0.8125rem;
+    --spacing-300:1rem;
+    --spacing-400:1.5rem;
+    --spacing-500:2rem;
+    --spacing-600:2.5rem;
+
+    --fw-bold: 400;
+    --fw-bolder: 500;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utilty Classes */
+.bg-purple {
+    background-color: var(--clr-primary-100);
+}
+
+.bg-light {
+    background-color: var(--clr-primary-blue-100);
+}
+.bg-neutral {
+    background-color: var(--clr-neutral-100);
+}
+.bg-dark-blue {
+    background-color: var(--clr-primary-blue-400);
+}
+
+.text-neutral {
+  color: var(--clr-neutral-100);
+}
+
+.text-gray {
+  color:  var(--clr-primary-blue-100);
+}
+
+
+.purple-border {
+  border: 2px solid var(--clr-primary-100);
+}
+
+
+.spacing > *:where(:not(:first-child)) {
+  margin-top: var(--flow-spacer, 1em);
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    background-color: var(--clr-neutral-blue-600);
+    place-content: center;
+    font-family: var(--font-family-default);
+}
+
+
+@media(min-width: 70em) {
+  .testimonial-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .testimonials:last-child {
+    grid-column: 4;
+    grid-row: 1 / 3;
+  }
+
+  .grid-col {
+    grid-column: span 2;
+  }
+  
+}
+
+.testimonial-grid {
+    display: grid;
+    gap: var(--spacing-500);
+    width: min(85%, 80rem);
+    margin-inline: auto;
+    padding-block: var(--spacing-500);
+}
+
+.testimonials {
+    border-radius: 10px;
+    padding: var(--spacing-500);
+  box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-primary-blue-100-400) / 0.25);
+}
+
+.testimonials:first-child {  
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right 10%;
+}
+
+
+
+.testimonials img {
+  aspect-ratio: 1;
+  width: 1.75rem;
+  border-radius: 50px;
+}
+
+.testimonials h2 {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-bolder);
+}
+
+.testimonials p {
+  font-size: var(--fs-200);
+  opacity: .5;
+}
+
+.testimonial-candidate {
+  display: flex;
+  gap: var(--spacing-200);
+}
+
+.testimonial-candidate h2 {
+  font-weight: var(--fw-bolder);
+  line-height: 1;
+  font-size: var(--fs-200);
+}
+
+.testimonial-candidate p {
+  font-size: var(--fs-100);
+  opacity: .5;
+}
+
+
+
